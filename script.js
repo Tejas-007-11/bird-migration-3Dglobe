@@ -1,12 +1,12 @@
 let scene, camera, renderer, globe, raycaster, mouse, controls;
-let lines = []; // To store bird migration lines
-let hoverInfo = document.getElementById('tooltip'); // Tooltip for hover info
-let dropdown = document.getElementById('dropdown'); // Dropdown for bird names
+let lines = []; 
+let hoverInfo = document.getElementById('tooltip'); 
+let dropdown = document.getElementById('dropdown'); 
 
-// Fetch bird data from JSON file
+
 async function loadBirdData() {
     try {
-        const response = await fetch('Birdmigration.json'); // Path to JSON file
+        const response = await fetch('Birdmigration.json'); 
         if (!response.ok) throw new Error('Failed to load bird data');
         const birdData = await response.json();
         initialize(birdData);
@@ -16,16 +16,16 @@ async function loadBirdData() {
 }
 
 function initialize(birdData) {
-    // Scene setup
+    
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById('globe-container').appendChild(renderer.domElement);
 
-    // Load the Earth texture
+    
     const textureLoader = new THREE.TextureLoader();
-    const earthTexture = textureLoader.load('images/earth_texture3.jpg'); // Ensure correct path
+    const earthTexture = textureLoader.load('images/earth_texture3.jpg'); 
     const geometry = new THREE.SphereGeometry(5.5, 64, 64);
     const material = new THREE.MeshBasicMaterial({ map: earthTexture });
     globe = new THREE.Mesh(geometry, material);
@@ -33,7 +33,7 @@ function initialize(birdData) {
 
     camera.position.z = 15;
 
-    // Smooth Orbit Controls
+   
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.15;
@@ -46,7 +46,7 @@ function initialize(birdData) {
     raycaster = new THREE.Raycaster();
     mouse = new THREE.Vector2();
 
-    // Set up event listeners
+    
     window.addEventListener('mousemove', onMouseMove, false);
     window.addEventListener('resize', onWindowResize, false);
     document.getElementById('search-btn').addEventListener('click', () => onSearch(birdData));
@@ -85,7 +85,7 @@ function hideDropdown(event) {
 }
 
 function drawCurvedLines(data) {
-    // Clear existing lines from the scene and the lines array
+   
     while (lines.length) {
         const line = lines.pop();
         scene.remove(line);
@@ -103,28 +103,28 @@ function drawCurvedLines(data) {
         const points = curve.getPoints(50);
         const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
-        // Create material with an initial color
+        
         const material = new THREE.LineBasicMaterial({
-            color: 0xff0000, // Initial color
-            linewidth: 12     // Line thickness
+            color: 0xff0000, 
+            linewidth: 12     
         });
 
         const line = new THREE.Line(geometry, material);
         lines.push(line);
         scene.add(line);
 
-        // Colors to cycle through
+        
         const colors = [0xff4500, 0x00ff00, 0x0000ff, 0xffff00, 0xff00ff, 0x00ffff];
         let colorIndex = 0;
 
-        // Function to change color every second
+        
         function changeLineColor() {
-            material.color.setHex(colors[colorIndex]); // Change color
-            colorIndex = (colorIndex + 1) % colors.length; // Cycle through colors
-            setTimeout(changeLineColor, 1000); // Repeat every second
+            material.color.setHex(colors[colorIndex]); 
+            colorIndex = (colorIndex + 1) % colors.length; 
+            setTimeout(changeLineColor, 1000);
         }
         
-        changeLineColor(); // Start the color-changing effect
+        changeLineColor();
     });
 }
 
@@ -202,5 +202,4 @@ function animate() {
 }
 
 loadBirdData(); // Start loading data and initialization
-
 

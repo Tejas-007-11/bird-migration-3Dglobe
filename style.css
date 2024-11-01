@@ -15,12 +15,12 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    z-index: 10; /* Ensure controls are above the globe */
-    transition: transform 0.3s ease; /* Smooth movement transition */
+    z-index: 10; 
+    transition: transform 0.3s ease; 
 }
 
 #controls:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
+    transform: translateY(-5px); 
 }
 
 #bird-input {
@@ -30,47 +30,47 @@ body {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth border and shadow transition */
+    transition: border-color 0.3s, box-shadow 0.3s; 
 }
 
 #bird-input:focus {
-    border-color: #4CAF50; /* Change border color on focus */
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green glow effect */
+    border-color: #4CAF50; 
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
 }
 
 #search-btn {
     padding: 12px 20px;
     border: none;
-    border-radius: 25px; /* More rounded corners */
-    background: linear-gradient(45deg, #6AB04C, #1DD1A1); /* Gradient background */
+    border-radius: 25px; 
+    background: linear-gradient(45deg, #6AB04C, #1DD1A1); 
     color: white;
-    font-size: 16px; /* Slightly larger font */
+    font-size: 16px; 
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
-    outline: none; /* Remove outline */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    outline: none; 
 }
 
 #search-btn:hover {
-    background: linear-gradient(45deg, #45a049, #17B978); /* Darker gradient on hover */
-    transform: scale(1.05) rotate(2deg); /* Slight scaling and rotation effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover for depth */
-    animation: pulse 1s infinite; /* Pulse animation */
+    background: linear-gradient(45deg, #45a049, #17B978); 
+    transform: scale(1.05) rotate(2deg); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+    animation: pulse 1s infinite; 
 }
 
-/* Pulse animation */
+
 @keyframes pulse {
     0%, 100% {
         transform: scale(1.05);
     }
     50% {
-        transform: scale(1.1); /* Slightly larger scale in the middle */
+        transform: scale(1.1); 
     }
 }
 
 #search-btn:focus {
-    outline: none; /* Prevent focus outline */
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Glow effect on focus */
+    outline: none; 
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
 }
 
 .tooltip {
@@ -79,15 +79,15 @@ body {
     color: #fff;
     padding: 5px;
     border-radius: 5px;
-    display: none; /* Initially hidden */
-    pointer-events: none; /* Prevents the tooltip from interfering with mouse events */
-    transition: opacity 0.3s, transform 0.3s; /* Smooth fade and transform */
+    display: none; 
+    pointer-events: none; 
+    transition: opacity 0.3s, transform 0.3s; 
 }
 
 .tooltip.visible {
-    display: block; /* Show tooltip */
-    opacity: 1; /* Ensure it is fully opaque */
-    transform: translateY(-10px); /* Slide up effect */
+    display: block; 
+    opacity: 1;
+    transform: translateY(-10px); /
 }
 
 .dropdown-list {
@@ -99,24 +99,24 @@ body {
     border: 1px solid #ccc;
     max-height: 150px;
     overflow-y: auto;
-    display: none; /* Initially hidden */
-    width: 200px; /* Adjust as needed */
-    z-index: 1000; /* Make sure it appears above other elements */
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade and slide transition */
+    display: none; 
+    width: 200px; 
+    z-index: 1000; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
 }
 
 .dropdown-list.show {
-    display: block; /* Show dropdown */
-    opacity: 1; /* Ensure it is fully opaque */
-    transform: translateY(0); /* Reset position */
+    display: block; 
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 .dropdown-list li {
     padding: 8px;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth background color transition */
+    transition: background-color 0.3s; 
 }
 
 .dropdown-list li:hover {
-    background-color: #f0f0f0; /* Highlight on hover */
+    background-color: #f0f0f0; 
 }
