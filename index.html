@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Migration Globe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="globe-container"></div>
+    <div id="controls">
+        <input type="text" id="bird-input" placeholder="Enter Bird Name">
+        <button id="search-btn">Search</button>
+        <div id="tooltip" class="tooltip"></div>
+        <ul id="dropdown" class="dropdown-list"></ul> <!-- Dropdown for bird names -->
+    <div id="tooltip" style="display:none; position:absolute; background-color: white; border: 1px solid black; padding: 5px;"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
