@@ -106,7 +106,7 @@ function drawCurvedLines(data) {
         
         const material = new THREE.LineBasicMaterial({
             color: 0xff0000, 
-            linewidth: 12     
+            linewidth: 8     
         });
 
         const line = new THREE.Line(geometry, material);
