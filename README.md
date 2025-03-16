@@ -16,7 +16,7 @@ The **Bird Migration Visualization Globe** is an interactive web application tha
 
 ## Demo
 
-You can explore the live demo of the Bird Migration Visualization [here](https://tejas-007-11.github.io/bird-globe/).
+You can explore the live demo of the Bird Migration Visualization [here](https://tejas-007-11.github.io/bird-migration-3Dglobe/).
 
 ## Technologies Used
 
